@@ -1,0 +1,93 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --primary-color: rgba(187,221,207,.7);
+    --font-color: rgba(49,49,49,1)
+}
+
+body{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+.menu-btn-box{
+    width: 45px;
+    height: 40px;
+    background-color: var(--primary-color);
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column ;
+    justify-content: space-between;
+    cursor: pointer;
+    padding: 5px;
+}
+.btn-line{
+    position: absolute;
+    background-color: var(--font-color);
+    height: 3px;
+    transition: .5s;
+}
+
+.top-line,.middle-line,.bottom-line{
+    width: 80%;
+    position: absolute;
+}
+.bottom-line{
+    top: 76%;
+}
+.top-line{
+    top: 20%;
+}
+#top-left{
+    width: 43%;
+}
+#top-middle{
+    width: 15%;
+    left: 50%;
+}
+#top-right{
+    width: 28%;
+    left: 73%;
+}
+#middle{
+    top: 48%;
+}
+#bottom-left{
+    width: 28%;
+}
+#bottom-middle{
+    width: 15%;
+    left: 35%;
+}
+#bottom-right{
+    width: 43%;
+    left: 57%;
+}
+
+.menu-btn-box.active .middle-line{
+    transform: scale(0.5);
+    transition-delay: .3s;
+}
+.menu-btn-box.active .top-line #top-left,.menu-btn-box.active .bottom-line #bottom-left{
+    transform: translateX(-50px);
+}
+.menu-btn-box.active .top-line #top-right,.menu-btn-box.active .bottom-line #bottom-right{
+    transform: translateX(50px);
+}
+.menu-btn-box.active .top-line #top-middle{
+    transform: translateX(-50%) translateY(380%) rotate(45deg);
+    width: 100%;
+}
+.menu-btn-box.active .bottom-line #bottom-middle{
+    transform: translateX(-35%) translateY(-380%) rotate(-45deg);
+    width: 100%;
+}
